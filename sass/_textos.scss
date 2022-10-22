@@ -1,0 +1,12 @@
+@import "fuentes";
+
+h1{
+    @include titulos;
+    text-align: center;
+}
+
+
+h2{
+    @include subtitulos;
+    text-align: center;
+}
