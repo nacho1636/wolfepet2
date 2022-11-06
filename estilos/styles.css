@@ -1,7 +1,8 @@
 /*--------------aplica-para-toda-la-web-------------*/ /*-----------declaro-grilla-------------*/
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Signika+Negative&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap");
-.grilla {
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+.grilla, .seccAli, .seccHig, .seccAcc {
   width: 100%;
   height: 100vh;
 }
@@ -33,6 +34,7 @@ footer {
 /*-----------------------------------estilos-body----------------------------------------*/
 body {
   background-color: rgb(248, 181, 94);
+  width: 100%;
   height: 100vh;
 }
 
@@ -52,7 +54,7 @@ header {
 
 /*-----------------------------------estilos-navbar---------------------------------------*/
 nav {
-  background-image: url(/img/patitas.jpg);
+  background-image: url(../img/patitas.webp);
 }
 nav ul {
   text-align: center;
@@ -85,41 +87,36 @@ nav ul li a {
 
 /*--------------------------------estilos-main-------------------------------------*/
 main {
-  display: grid;
-  background-color: wheat;
-  margin: 0px;
-  padding: 0px;
-  height: 100vh;
-  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+main .container-fluid {
+  text-align: center;
 }
 
-/*--------------------------------estilos-imagenes----------------------------------*/
-img {
-  width: 100%;
-  height: 60%;
-  border: 8px solid black;
+/*-----------------------------estilos-servicios------------------------------------*/
+.servicios {
+  text-align: center;
 }
 
 /*---------------------------------estilos-aside-----------------------------------*/
 aside {
-  background-image: url(../img/patitas.jpg);
+  background-image: url(../img/patitas.webp);
+  text-align: center;
   display: grid;
-  justify-items: center;
-  padding: 0;
-  margin: 0;
 }
 aside .k9 {
-  border: 6px solid black;
+  border: 4px solid black;
+  margin: 4em;
 }
 
 /*----------------------------estilos-footer---------------------------------*/
 footer {
-  bottom: 0;
-  width: 100%;
   text-align: center;
   padding: 1em;
   background-color: #3a3548;
   color: white;
+  font-weight: bold;
 }
 
 /*----------------------------formulario----------------------------*/
@@ -130,16 +127,44 @@ footer {
   width: 70%;
 }
 
-/*
-font-family: 'Raleway', sans-serif;
-font-family: 'Holtwood One SC', serif;
-*/
+/*--------------------------------estilos-imagenes----------------------------------*/
+.caro {
+  width: 80%;
+  height: 30vh;
+  border: 4px solid black;
+}
+
+.pelu {
+  width: 80%;
+  height: 30vh;
+  border: 4px solid black;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  justify-items: center;
+}
+.galeria .alim, .galeria .acce, .galeria .hig {
+  height: 80%;
+  width: 80%;
+  border: 4px solid black;
+}
+.galeria .alim:hover, .galeria .acce:hover, .galeria .hig:hover {
+  transform: scale(1.2);
+  transition: all;
+  transition-duration: 0.2s;
+}
+
 h1 {
   font-family: "Holtwood One SC", serif;
   font-size: 40px;
   font-weight: bold;
-  color: #3a3548;
+  color: black;
   text-align: center;
+  margin: 15px;
+  padding: 15px;
 }
 
 h2 {
@@ -147,6 +172,18 @@ h2 {
   font-size: 30px;
   font-weight: bold;
   color: black;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+p {
+  font-family: "Anton", sans-serif;
+  font-weight: bolder;
+  font-size: 2em;
+  margin: 1px;
+  padding: 1px;
+  color: #3a3548;
   text-align: center;
 }
 
@@ -161,25 +198,19 @@ h2 {
   .border {
     border: 1px solid black;
   }
-  .grilla {
-    height: 100vh;
+  .grilla, .seccAli, .seccHig, .seccAcc, .seccCont {
     display: grid;
     grid-template-areas: "nav" "header" "productos" "publicidad" "servicios" "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr 2fr 2fr 2fr;
     gap: 10px;
   }
 }
-/*-----------------------------------------------*/
 /*-------------------------------------tablet-breakpoint------------------------------------------*/
 @media screen and (min-width: 768px) {
-  .grilla {
-    width: 100%;
-    height: 100vh;
+  .grilla, .seccAli, .seccHig, .seccAcc, .seccCont {
     display: grid;
-    grid-template-areas: "nav nav" "header header" "productos publicidad" "productos publicidad" "servicios servicios" "footer footer";
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 3fr 2fr 2fr 2fr 2fr;
+    grid-template-areas: "nav nav" "header header" "productos productos" "publicidad publicidad" "servicios servicios" "footer footer";
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
   li {
@@ -187,13 +218,27 @@ h2 {
     flex-direction: row;
   }
 }
+/*-------a-partir-de-aca-estilos-unicos-breakpoint-------*/
 /*-------------------------------------desktop-breakpoint------------------------------------------*/
 @media screen and (min-width: 1024px) {
   .grilla {
     display: grid;
     grid-template-areas: "nav nav nav" "header header header" "productos productos publicidad" "productos productos publicidad" "servicios servicios publicidad" "footer footer footer";
-    grid-template-columns: 3fr 3fr 2fr;
-    grid-template-rows: 2fr 3fr 4fr 4fr 4fr 2fr;
-    gap: 15px;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 3fr 3fr 3fr 2fr;
+    gap: 10px;
+  }
+  .seccAli, .seccHig, .seccAcc, .formu {
+    display: grid;
+    grid-template-areas: "nav nav nav" "header header header" "productos productos productos" "productos productos productos" "productos productos productos" "footer footer footer";
+    grid-template-columns: 2fr 2fr 2fr;
+    gap: 10px;
+  }
+  main, .galeria {
+    margin-top: 5em;
+    margin-bottom: 15em;
+  }
+  .servicios {
+    margin-top: 10em;
   }
 }/*# sourceMappingURL=styles.css.map */

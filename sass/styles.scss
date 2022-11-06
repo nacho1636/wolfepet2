@@ -16,8 +16,7 @@
         border: 1px solid black;
     }
 
-    .grilla {
-        height: 100vh;
+    .grilla, .seccAli, .seccHig, .seccAcc, .seccCont{
         display: grid;
         grid-template-areas:
             "nav"
@@ -27,42 +26,30 @@
             "servicios"
             "footer";
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 3fr 2fr 2fr 2fr;
         gap: 10px;
+
 
 
     }
 
 }
 
-/*-----------------------------------------------*/
-
-
-
-
-
-
-
-
-
 
 
 
 /*-------------------------------------tablet-breakpoint------------------------------------------*/
 @media screen and (min-width: 768px) {
-    .grilla {
-        width: 100%;
-        height: 100vh;
+    .grilla, .seccAli, .seccHig, .seccAcc, .seccCont{
         display: grid;
         grid-template-areas:
             "nav nav"
             "header header"
-            "productos publicidad"
-            "productos publicidad"
+            "productos productos"
+            "publicidad publicidad"
             "servicios servicios"
             "footer footer";
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: 1fr 3fr 2fr 2fr 2fr 2fr;
+        grid-template-columns: 1fr 1fr;
+
         gap: 10px;
     }
 
@@ -70,8 +57,11 @@
         display: flex;
         flex-direction: row;
     }
-
 }
+
+    /*-------a-partir-de-aca-estilos-unicos-breakpoint-------*/
+
+
 
 /*-------------------------------------desktop-breakpoint------------------------------------------*/
 @media screen and (min-width: 1024px) {
@@ -84,8 +74,33 @@
             "productos productos publicidad"
             "servicios servicios publicidad"
             "footer footer footer";
-        grid-template-columns: 3fr 3fr 2fr;
-        grid-template-rows: 2fr 3fr 4fr 4fr 4fr 2fr;
-        gap: 15px;
+        grid-template-columns: 2fr 2fr 2fr;
+        grid-template-rows: 2fr 2fr 3fr 3fr 3fr 2fr;
+        gap: 10px;
     }
+
+    .seccAli, .seccHig, .seccAcc, .formu{
+        display: grid;
+        grid-template-areas:
+        "nav nav nav"
+        "header header header"
+        "productos productos productos"
+        "productos productos productos"
+        "productos productos productos"
+        "footer footer footer";
+            grid-template-columns: 2fr 2fr 2fr;
+            gap: 10px;
+    }
+
+    main, .galeria{
+        margin-top: 5em;
+        margin-bottom: 15em;
+    }
+    
+    .servicios{
+        margin-top: 10em;
+    }
+
+
+
 }
